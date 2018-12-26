@@ -1,0 +1,207 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.content{
+    background: #007aff;
+    width: 1050px;
+    height: 620px;
+    margin: 0 auto;
+}
+.right_one,.right_two,.right_four{
+     /*display: none;*/
+ }
+.left{
+    float: left;
+    width: 300px;
+    margin-left: 25px;
+    display: inline-block;
+}
+.right{
+    float: right;
+    margin-top: 30px;
+    width: 650px;
+    height: 550px;
+    margin-right: 50px;
+    background: #FFFFFF;
+    display: inline-block;
+}
+.img_logo{
+    width: 150px;
+    margin-left: 10px;
+}
+.img_service,.img_client{
+    width: 250px;
+}
+ul{
+    margin-bottom: 120px;
+    /*margin-left: 70px;*/
+}
+li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 55px;
+    margin-top: 50px;
+    text-align: center;
+}
+li:nth-child(5),li:nth-child(10){
+    margin-right: 30px;
+}
+.icon{
+    width: 40px;
+}
+.card_one,.card_two{
+    padding-left: 30px;
+    width: 500px;
+    height: 80px;
+    background:#007aff;
+    font-size: 18px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+    border-radius: 5px;
+}
+.pick{
+    margin-top: 20px;
+}
+.cc{
+    background: #7ebbff;
+    color: white;
+    width: 150px;
+    font-size: 12px;
+    height: 30px;
+    padding-left: 5px;
+   line-height: 30px;
+    text-align: left;
+    border-radius: 5px;
+    margin:  5px 0;
+}
+.left_img{
+    margin-left: 25px;
+}
+
+/*right_two css*/
+.paymoney_one,.paymoney_two,.paymoney_three{
+    margin-left: 25px;
+    margin-top: 20px;
+}
+.right_two{
+    text-align: right;
+    margin-right: 100px;
+    font-size: 13px;
+    color: #666666;
+}
+.right_two p{
+    margin: 15px 0;
+}
+.right_two input{
+    width: 400px;
+}
+.message{
+    font-size: 20px;
+    color: #000000;
+    padding-right: 410px;
+    /*text-align: left;*/
+}
+.press{
+    text-align: center;
+}
+.last{
+    width: 120px;
+    height: 40px;
+    background: #7ebbff;
+    margin-right: 30px;
+    color: #FFFFFF;
+    border-radius: 10px;
+
+}
+.cancel{
+    width: 120px;
+    height: 40px;
+    background: #7ebbff;
+    color: #FFFFFF;
+    border-radius: 10px;
+}
+.name{
+    padding-right: 365px;
+}
+.account{
+padding-right: 313px;
+}
+
+/*right_three css*/
+.payer_one,.payee_one{
+    display: inline-block;
+    width: 49%;
+    text-align: center;
+}
+.payer,.payee{
+    display: inline-block;
+    text-align: left;
+}
+.payer{
+    border-right: 1px solid #a9a9a9;
+    padding-right: 4%;
+}
+.right_three{
+    text-align: center;
+    color: #666666;
+}
+.person{
+    font-size: 25px;
+    color: #666666;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.payer p,.payee p{
+    margin-bottom: 20px;
+}
+.collect{
+    margin: 40px 0;
+}
+.collect p{
+    margin-bottom: 20px;
+}
+.last_two{
+    width: 160px;
+    height: 60px;
+    background: #7ebbff;
+    margin-right: 30px;
+    color: #FFFFFF;
+    border-radius: 10px;
+}
+.cancel_two{
+    width: 160px;
+    height: 60px;
+    background: #7ebbff;
+    color: #FFFFFF;
+    border-radius: 10px;
+}
+
+/*right_four css*/
+.right_four{
+    text-align: center;
+}
+.success{
+    margin: 80px 0;
+}
+.success>img{
+    width: 80px;
+}
+.success>p{
+font-size: 25px;
+    color: lightskyblue;
+}
+.dollor>p{
+    text-align: left;
+    margin-left: 30%;
+  margin-bottom: 30px;
+    color: #000000;
+}
+.free{
+    padding-left: 3%;
+}

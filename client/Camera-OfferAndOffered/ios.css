@@ -1,0 +1,64 @@
+body {
+  margin-top: 15px;
+  font-family: sans-serif;
+  color: #333333;
+}
+button,input{
+  border:none;
+  margin: 0;
+  padding:0;
+}
+#login-page{
+  text-align: center;
+}
+#username,#their-username{
+  width: 175px;
+  height: 30px;
+  border-radius: 5px;
+  line-height: 30px;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  border: 1px solid #7ebbff;
+}
+#call{
+  width: 40px;
+  margin-left: 0px;
+  height: 30px;
+  text-align: center;
+  border-radius: 5px;
+}
+#login{
+  height: 35px;
+  width: 50px;
+  line-height: 35px;
+  border-radius: 5px;
+  background-color: #7ebbff;
+  margin-top: 15px;
+  background-color: #7ebbff;
+}
+video {
+  background: black;
+  border: 1px solid gray;
+}
+.page,#yours,#theirs {
+  margin: 0 auto;
+  width: 100%;
+  height: 140px;
+}
+.showDown{
+  width: 100%;
+  text-align: center;
+  padding-top:20px;
+}
+.sureBtn{
+  margin:0 auto;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #cccccc;
+  color: #FFFFFF;
+  font-size: 20px;
+}
+.active{
+  background-color: #7ebbff;
+}

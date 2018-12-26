@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>webRTC</title>
+  <link rel="stylesheet" type="text/css" href="main.css" />
+  <link rel="stylesheet" type="text/css" href="HomePage.css">
+  <script src="./js/jquery-3.0.0.min.js" type="text/javascript"></script>
+  <script src="./js/index.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div  class="buffer">
+  <div class="buffer_logo">
+    <img src="img/icon_bank.png" alt="">
+  </div>
+  <div class="buffer_writing">
+    <p>视频请求链接已通过微信公众号发送至你的微信哦～</p>
+    <p>请通过微信同客服进行视频对话～</p>
+  </div>
+</div>
+<div  class="container">
+  <div class="conversation">
+    <div style="margin-left: 13.5%;width:74%;background: #FFFFFF;color: #666666;height: 40px;line-height: 40px;text-align: center;">李文文 | 工号：10100</div>
+    <div id="login-page" class="page">
+      <h2 style="height: 40px;text-align: center;"> Login As</h2>
+      <input type="text" id="username" />
+      <button id="login"> Login</button>
+    </div>
+    <div id="call-page" class="page">
+      <video id="yours" autoplay></video>
+      <video id="theirs" autoplay></video>
+      <div class="callall">
+        <input type="text" id="their-username" value="ios" />
+        <button id="call"> Call</button>
+        <button id="hang-up"> Hang Up</button>
+      </div>
+      <button class="ccs">高亮</button>
+    </div>
+  </div>
+  <div class="right">
+    <div  class="accountant">
+      <div  class="right_one">
+        <ul>
+          <li id="uu">
+            <img class="icon icon_a" src="img/icon_trans.png" alt="">
+            <p>我要转账</p>
+          </li>
+          <li id="hh">
+            <img class="icon" src="img/icon_money.png" alt="">
+            <p>理财</p>
+          </li>
+          <li id="gg">
+            <img class="icon" src="img/icon_elm.png" alt="">
+            <p>外卖</p>
+          </li>
+          <li>
+            <img class="icon" src="img/icon_search.png" alt="">
+            <p>账户查询</p>
+          </li>
+          <li>
+            <img class="icon" src="img/icon_up.png" alt="">
+            <p>基金</p>
+          </li>
+          <li>
+            <img class="icon" src="img/icon_key.png" alt="">
+            <p>业务开通</p>
+          </li>
+          <li>
+            <img class="icon" src="img/icon_credit.png" alt="">
+            <p>信用卡</p>
+          </li>
+          <li>
+            <img class="icon" src="img/icon_loan.png" alt="">
+            <p>贷款</p>
+          </li>
+          <li>
+            <img class="icon" src="img/icon_yellow.png" alt="">
+            <p>黄金实物</p>
+          </li>
+          <li>
+            <img class="icon" src="img/icon_set.png" alt="">
+            <p>资金归集</p>
+          </li>
+        </ul>
+        <div class="card_one">
+          <div class="cardtype">
+            <span>交通银行</span>
+            <span >|</span>
+            <span>借记卡</span>
+          </div>
+          <p class="pick">622260******1234</p>
+        </div>
+        <div class="card_two">
+          <div class="cardtype">
+            <span>交通银行</span>
+            <span >|</span>
+            <span>信用卡</span>
+          </div>
+          <p class="pick">452312******1234</p>
+        </div>
+      </div>
+      <div class="right_two">
+        <div class="paymoney_one">
+          <p class="message">
+            <img src="img/icon_left.png " alt="">
+            <span>付款人信息:</span>
+          </p>
+          <div class="msgRow">
+            <span class="rowLeft">转出卡号/账户：</span>
+            <input class="rowRight" id="zhuanchu" type="text">
+          </div>
+          <div class="msgRow">
+            <span class="rowLeft">姓名：</span>
+            <span class="rowRight" id="name">李先生</span>
+          </div>
+          <div class="msgRow">
+            <span class="rowLeft">账户可用余额：</span>
+            <span class="rowRight" id="amt">13452.6元</span>
+          </div>
+          <div class="msgSelect">
+            <p class="selectUser" data-name="张三" data-amt="6.18" data-num="987654">987654</p>
+            <p class="selectUser" data-name="李四" data-amt="12.12" data-num="987655">987655</p>
+            <p class="selectUser" data-name="网二" data-amt="11.11" data-num="987655">987655</p>
+          </div>
+        </div>
+        <div class="paymoney_two">
+          <p class="message"><span>收款人姓名:</span></p>
+          <div class="msgRow">
+            <span class="rowLeft">收款人账号：</span>
+            <input class="rowRight" type="text">
+          </div>
+        </div>
+        <div class="paymoney_three">
+          <p class="message"><span>转账信息:</span></p>
+          <div class="msgRow">
+            <span class="rowLeft">转账金额：</span>
+            <input class="rowRight" type="text">
+          </div>
+          <div class="msgRow">
+            <span class="rowLeft">转账方式：</span>
+            <input class="rowRight" type="text">
+          </div>
+          <div class="msgRow">
+            <span class="rowLeft">手续费：</span>
+            <input class="rowRight" type="text">
+          </div>
+          <div class="msgRow">
+            <span class="rowLeft">短信通知：</span>
+            <input class="rowRight" type="text">
+          </div>
+          <div class="msgRow">
+            <span class="rowLeft">附言：</span>
+            <input class="rowRight" type="text">
+          </div>
+        </div>
+        <div class="sure_click" >
+          <button class="bigBtn">请点击确认转账</button>
+        </div>
+      </div>
+      <div style="display: none" class="right_three">
+        <div>
+          <div class="payer_one">
+            <p class="person">付款人</p>
+            <div class="payer">
+              <p>姓名：李先生</p>
+              <p>付款账户：6222 6000 2001 1234 342</p>
+              <p>开户银行：交通银行</p>
+            </div>
+          </div>
+          <div class="payee_one">
+            <p class="person">收款人</p>
+            <div class="payee">
+              <p>姓名：李先生</p>
+              <p>付款账户：6222 6000 2001 1234 342</p>
+              <p>开户银行：交通银行</p>
+            </div>
+          </div>
+        </div>
+        <div class="collect">
+          <p>转账金额：100000RMB</p>
+          <p>手续费：免费</p>
+          <p>转账方式：实时转账(预计实时到账)</p>
+        </div>
+        <div id="transaccount" style="padding-bottom: 10px;">
+          <button class="bigBtn">请点击确认转账</button>
+        </div>
+      </div>
+      <div style="display: none" class="right_four">
+        <img class="cco" src="img/icon_back.png" alt="">
+        <div class="success">
+          <img src="img/icon_pigeon.png" alt="">
+          <p>转账成功</p>
+        </div>
+        <div class="dollor">
+          <p>转账金额：100000RMB</p>
+          <p class="free">手续费：免费</p>
+          <p>转账方式：实时转账(预计实时到账)</p>
+        </div>
+      </div>
+    </div>
+    <div  class="abacus">
+      <div style="display: none" class="right_five">
+        <div class="backhome">
+          <img src="img/icon_left.png" alt="">
+        </div>
+        <div class="invest_one">
+          <div>
+            <p>沃德添利6个月</p><p>低风险</p>
+          </div>
+          <div>
+            <p>181天</p><p>投资期限</p>
+          </div>
+          <div>
+            <p style="color: #ff0000">4.1%～4.18%</p><p>预计年华收益率</p>
+          </div>
+          <div>
+            <p>1.0万元</p><p>起售金额</p>
+          </div>
+        </div>
+        <div class="invest_two">
+          <div>
+            <p>沃德享受悦28天</p><p>低风险</p>
+          </div>
+          <div>
+            <p>28天起</p><p>投资期限</p>
+          </div>
+          <div>
+            <p style="color: #ff0000">3.77%</p><p>最新年华收益率</p>
+          </div>
+          <div>
+            <p>1.0万元</p><p>起售金额</p>
+          </div>
+        </div>
+        <div class="invest_three">
+          <div>
+            <p>交银现金添利1号</p><p>低风险</p>
+          </div>
+          <div>
+            <p>活期类</p><p>投资期限</p>
+          </div>
+          <div>
+            <p style="color: #ff0000">3.84%</p><p>预计年华收益率</p>
+          </div>
+          <div>
+            <p>5.0万元</p><p>起售金额</p>
+          </div>
+        </div>
+        <div class="invest_four">
+          <div>
+            <p>添利息结构性存款</p><p>低风险</p>
+          </div>
+          <div>
+            <p>活期类</p><p>投资期限</p>
+          </div>
+          <div>
+            <p style="color: #ff0000">2.30%～2.50%</p><p>预计年华收益率</p>
+          </div>
+          <div>
+            <p>1.0万元</p><p>起售金额</p>
+          </div>
+        </div>
+        <div class="invest_five">
+          <div>
+            <p>稳添利结构性存款</p><p>低风险</p>
+          </div>
+          <div>
+            <p>35天</p><p>投资期限</p>
+          </div>
+          <div>
+            <p style="color: #ff0000">3.60%～3.80%</p><p>预计年华收益率</p>
+          </div>
+          <div>
+            <p>1.0万元</p><p>起售金额</p>
+          </div>
+        </div>
+      </div>
+      <div style="display: none;"  class="right_six">
+        <div class="right_top">
+          <div>
+            <img class="right_return" src="img/icon_left.png" alt=""><span>沃德添利6个月</span>
+          </div>
+          <div  class="sky">
+            <p>
+              <span class="gray">购买金额：</span>
+              <input type="text" style="border:1px solid #666666;width: 60%;">
+            </p>
+            <p>
+              <span class="gray">大写：</span>
+              <span>李先生</span>
+            </p>
+            <p>
+              <span class="gray">理财交易账号：</span>
+              <span>6222 6000 1100 1231 2344 678</span>
+            </p>
+            <p>
+              <span class="gray">余额：</span>
+              <span>131,123,322,23</span>
+            </p>
+            <div class="prompt">
+              <span style="color: #000000">授权即表示已认真阅读</span><span>理财协议条款  风险揭示书  产品说明书</span><span>并同意相关内容</span>
+            </div>
+
+          </div>
+          <div class="press promptess">
+            <button class="last_x">下一步</button>
+            <button class="cancel_q">取消</button>
+          </div>
+        </div>
+        <div  class="right_seven">
+          <div>
+            <img class="return_back" src="img/icon_back.png" alt="">
+          </div>
+          <div class="centerbott">
+            <div class="vietry">
+              <img src="img/icon_pigeon.png" alt="">
+              <p id="ll">转账成功</p>
+            </div>
+            <p id="profits">沃德添利6个月</p>
+            <div id="capital">
+              <div class="trading_left">
+                <p>购买金额：</p>
+                <p>大写：</p>
+                <p>理财交易账号：</p>
+              </div>
+              <div class="trading_right">
+                <p>100000RMB</p>
+                <p>壹佰万圆整</p>
+                <p>6222 6001 1100 1231 2344 4</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div style="display: none" class="right_seven">
+        <div>
+          <img class="return_back" src="img/icon_back.png" alt="">
+        </div>
+        <div class="centerbott">
+          <div class="vietry">
+            <img src="img/icon_pigeon.png" alt="">
+            <p style="color: #87cefa;font-size: 25px;margin-top: 1%">购买成功</p>
+          </div>
+          <p>沃德添利6个月</p>
+          <div class="centerbott_art">
+            <p>
+              <span>购买金额：</span>
+              <span>100000RMB</span>
+            </p>
+            <p>
+              <span>大写：</span>
+              <span>壹佰万圆整</span>
+            </p>
+            <p>
+              <span>理财交易账号：</span>
+              <span>6222 6001 1100 1231 2344 4</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="currency">
+      <div style="display: none" class="right_eight">
+        <div class="supersript">
+          <img src="img/icon_left.png" alt=""><img src="img/icon_adress.png" alt=""><span>交通银行软件开发中心</span>
+        </div>
+        <input class="search" type="text"placeholder="搜索">
+        <div class="picture flower">
+          <img  src="img/icon_head.png" alt="">
+          <img  src="img/icon_head.png" alt="">
+          <img  src="img/icon_head.png" alt="">
+          <img  src="img/icon_head.png" alt="">
+          <img  src="img/icon_head.png" alt="">
+          <img  src="img/icon_head.png" alt="">
+        </div>
+      </div>
+      <div style="display: none" class="right_nine">
+        <div class="barbecue">
+          <div class="barbecue_npm" style="display: inline-block;margin-top: 1%">
+            <img style="width: 5%;padding: 0 2% 2% 1%"  src="img/icon_left.png" alt="">
+            <img style="width: 10%;"   src="img/icon_cup.png" alt="">
+            <div style="display: inline-block">
+              <p style="color: #000000;">串意十足烧烤店</p>
+              <img class="right_star" style="width:30%  " src="img/icon_star.png" alt="">
+            </div>
+          </div>
+          <input  type="text"placeholder="搜索">
+        </div>
+        <div class="picture camer">
+          <img src="img/icon_small.png" alt="">
+          <img src="img/icon_small.png" alt="">
+          <img src="img/icon_small.png" alt="">
+          <img src="img/icon_small.png" alt="">
+          <img src="img/icon_small.png" alt="">
+          <img src="img/icon_small.png" alt="">
+        </div>
+        <div class="right_fixd">
+          <img src="img/icon_air.png" alt="">
+        </div>
+      </div>
+      <div style="display: none" class="right_ten">
+        <div class="barbecue">
+          <img class="barbecue_left fack" src="img/icon_left.png" alt="">
+          <img class="barbecue_cup"  src="img/icon_cup.png" alt="">
+          <div style="display: inline-block;padding-top: 1%">
+            <p style="color: #000000">串意十足烧烤店</p>
+            <img style="width: 60px;" src="img/icon_star.png" alt="">
+          </div>
+          <input class="seek"  type="text"placeholder="搜索">
+        </div>
+        <div class="picture  photo">
+          <img src="img/icon_small.png" alt="">
+          <img src="img/icon_small.png" alt="">
+          <img src="img/icon_small.png" alt="">
+          <img src="img/icon_small.png" alt="">
+          <img src="img/icon_small.png" alt="">
+          <img src="img/icon_small.png" alt="">
+        </div>
+        <div class="right_fix">
+          <img src="img/icon_noair.png" alt="">
+        </div>
+      </div>
+      <div style="display: none" class="right_eleven">
+        <div style="text-align: center;margin-top: 1%;position: relative">
+          <img class="goback" style="width: 2%;position: absolute;left: 3%;top: 1%;" src="img/icon_back.png" alt="">
+          <div style="display: inline-block">
+            <p><img style="width: 20%;" src="img/icon_pigeon.png" alt=""></p>
+            <p style="margin: 1% 0;font-size: 20px;color: #05A0C8">下单成功</p>
+            <p style="color: #d3d3d3;font-size: 13px">等待商家接单</p>
+          </div>
+        </div>
+        <div class="indent">
+          <p>订单详情</p>
+          <div>
+            <p>
+              <span>韭菜鸡蛋</span>
+              <span>配送费</span>
+              <span>餐盒</span>
+            </p>
+            <p>
+              <span style="margin-bottom: 60px">1份</span>
+              <span>1个</span>
+            </p>
+            <p>
+              <span>￥15.9元</span>
+              <span style="padding-left: 15px">5.0元</span>
+              <span style="padding-left: 15px">2.0元</span>
+            </p>
+          </div>
+          <p class="all">合计：￥22.9元</p>
+        </div>
+        <div class="goods_ad" style="text-align: center">
+          <p style="font-size: 20px;color: #000000;margin-right: 68%;margin-bottom: 2%">收货地址</p>
+          <div class="goods_adress">
+            <img style="border-right: 1px solid
+#d3d3d3" src="img/icon_grayadress.png" alt="">
+            <div style="display: inline-block">
+              <p>
+                李先生 18255623698
+              </p>
+              <p>上丰路1111号</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="display: none"  class="right_twelve">
+        <div class="indent">
+          <p>订单详情</p>
+          <div>
+            <p>
+              <span>韭菜鸡蛋</span>
+              <span>配送费</span>
+              <span>餐盒</span>
+            </p>
+            <p>
+              <span style="margin-bottom: 60px">1份</span>
+              <span>1个</span>
+            </p>
+            <p>
+              <span>￥15.9元</span>
+              <span style="padding-left: 15px">5.0元</span>
+              <span style="padding-left: 15px">2.0元</span>
+            </p>
+          </div>
+          <p class="all">合计：￥22.9元</p>
+        </div>
+        <div class="goods">
+          <div class="goods_ad" style="text-align: center">
+            <p style="font-size: 20px;color: #000000;margin-right: 68%;margin-bottom: 2%">收货地址</p>
+            <div class="goods_adress">
+              <img style="border-right: 1px solid
+#d3d3d3" src="img/icon_grayadress.png" alt="">
+              <div style="display: inline-block;color: #000000">
+                <p>
+                  李先生 18255623698
+                </p>
+                <p>上丰路1111号</p>
+              </div>
+            </div>
+          </div>
+          <div style="color: #000000;text-align: left;margin-left: 12%">
+            <p style="font-size: 20px;color: #000000;">付款方式</p>
+            <div  style="display: inline-block;width: 100%;">
+              <span style="font-size: 15px;color: #666666;">支付账户：</span><input type="text" style="border: 1px solid #d3d3d3;width: 70%;margin-left: 1%">
+            </div>
+          </div>
+          <div class="goods_three">
+            <button class="last_y">下一步</button>
+            <button class="cancel_y">取消</button>
+          </div>
+        </div>
+      </div>
+      <div style="display: none" class="right_thirteen">
+        <div class="menu">
+          <img class="back_left" src="img/icon_left.png" alt="">
+          <span>购物车</span>
+        </div>
+        <div class="menu_content">
+          <div style="color: #000000">
+            <p>
+              <span  class="menu_web_one">韭菜炒蛋</span><span><img src="img/icon_reduce.png" alt=""><span>￥15.9</span></span>
+            </p>
+            <p >
+              <span  class="menu_web_two">干锅手撕包菜</span><span><img src="img/icon_reduce.png" alt=""><span>￥16</span></span>
+            </p>
+            <p>
+              <span class="menu_web_three">酸菜龙利鱼</span><span><img src="img/icon_reduce.png" alt=""><span>￥29.9</span></span>
+            </p>
+            <p>
+              <span class="menu_web_four">鱼香茄子煲</span> <span><img src="img/icon_reduce.png" alt=""> <span>￥16</span></span>
+            </p>
+            </p>
+          </div>
+          <div class="menu_bottom">
+            <img class="settle" src="img/icon_statistics.png" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script src="main.js"></script>
+<script>
+  // 隐藏登陆呼叫内容
+  $("#login-page").css("display","none");
+  $(".callall").css("display","none");
+  // 点击转账
+  $("#uu").click(function () {
+    $(".right_one").attr("style","display:none");
+    $(".right_two").attr("style","display:block");
+  });
+  // 点击理财
+  $("#hh").click(function () {
+    $(".abacus").attr("style","display:block");
+    $(".currency").attr("style","display:none");
+    $(".accountant").attr("style","display:none");
+    $(".right_five").attr("style","display:block");
+    $(".right_six").attr("style","display:none");
+    $(".right_seven").attr("style","display:none");
+
+  });
+  // 点击外卖
+  $("#gg").click(function () {
+    $(".abacus").attr("style","display:none");
+    $(".currency").attr("style","display:block");
+    $(".accountant").attr("style","display:none");
+    $(".right_eight").attr("style","display:block");
+    $(".right_nine").attr("style","display:none");
+    $(".right_ten").attr("style","display:none");
+    $(".right_eleven").attr("style","display:none");
+    $(".right_twelve").attr("style","display:none");
+    $(".right_thirteen").attr("style","display:none");
+
+  });
+  $(".last").click(function (){
+    $(".right_one").attr("style","display:none");
+    $(".right_two").attr("style","display:none");
+    $(".right_three").attr("style","display:block");
+  })
+  $(".cancel").click(function () {
+    $(".right_one").attr("style","display:block");
+    $(".right_two").attr("style","display:none");
+  })
+  $(".last_two").click(function (){
+    $(".right_one").attr("style","display:none");
+    $(".right_two").attr("style","display:none");
+    $(".right_three").attr("style","display:none");
+    $(".right_four").attr("style","display:block");
+  })
+  $(".cancel_two").click(function () {
+    $(".right_one").attr("style","display:none");
+    $(".right_two").attr("style","display:block");
+    $(".right_three").attr("style","display:none");
+  })
+  $(".invest_one").click(function () {
+    $(".right_five").attr("style","display:none");
+    $(".right_six").attr("style","display:block");
+  })
+  $(".right_return").click(function () {
+    $(".right_five").attr("style","display:block");
+    $(".right_six").attr("style","display:none");
+  })
+  $(".return_back").click(function () {
+    $(".accountant").attr("style","display:block");
+    $(".right_one").attr("style","display:block");
+    $(".right_seven").attr("style","display:none");
+  })
+  $(".backhome").click(function () {
+    $(".abacus").attr("style","display:none");
+    $(".accountant").attr("style","display:block");
+  })
+
+
+  $(".flower").click(function () {
+    $(".right_one") .attr("style","display:none");
+    $(".right_eight") .attr("style","display:none");
+    $(".right_nine") .attr("style","display:block");
+  })
+  $(".barbecue_npm").click(function () {
+    $(".right_eight") .attr("style","display:block");
+    $(".right_nine") .attr("style","display:none");
+  })
+  $(".right_fix").click(function () {
+    $(".right_ten") .attr("style","display:none");
+    $(".right_thirteen") .attr("style","display:block");
+  })
+  $(".camer").click(function () {
+    $(".right_nine") .attr("style","display:none");
+    $(".right_ten") .attr("style","display:block");
+  })
+  $(".settle").click(function () {
+    $(".right_thirteen") .attr("style","display:none");
+    $(".right_twelve") .attr("style","display:block");
+  })
+  $(".last_y").click(function () {
+    $(".right_twelve") .attr("style","display:none");
+    $(".right_eleven") .attr("style","display:block");
+  })
+  $(".cancel_y").click(function () {
+    $(".right_twelve") .attr("style","display:none");
+    $(".right_thirteen") .attr("style","display:block");
+  })
+  $(".goback").click(function () {
+    $(".accountant") .attr("style","display:block");
+    $(".right_one") .attr("style","display:block");
+    $(".right_eleven") .attr("style","display:none");
+  })
+  $(".back_left").click(function () {
+    $(".right_thirteen") .attr("style","display:none");
+    $(".right_ten") .attr("style","display:block");
+  })
+  $(".barbecue_left").click(function () {
+    $(".right_one") .attr("style","display:none");
+    $(".right_four") .attr("style","display:block");
+    $(".right_five") .attr("style","display:none");
+    $(".right_three") .attr("style","display:none");
+    $(".right_two") .attr("style","display:none");
+    $(".right_six") .attr("style","display:none");
+  })
+  $(".fack").click(function () {
+    $(".right_ten") .attr("style","display:none");
+    $(".right_nine") .attr("style","display:block");
+  })
+  $(".supersript").click(function () {
+    window.history.go(-1);
+  })
+  $(".cco").click(function () {
+    $(".right_four") .attr("style","display:none");
+    $(".right_one") .attr("style","display:block");
+  })
+  $(".people").click(function () {
+    $(".right_two").attr("style","display:none");
+    $(".right_one").attr("style","display:block");
+  })
+  $(".last_x").click(function () {
+    $(".right_six").attr("style","display:none");
+    $(".right_seven").attr("style","display:block");
+  })
+  $(".cancel_q").click(function () {
+    $(".right_six").attr("style","display:none");
+    $(".right_five").attr("style","display:block");
+  })
+  $(".sure_click").click(function () {
+    $(".right_two").css("display","none");
+    $(".right_three").css("display","block");
+  })
+
+
+</script>
+
+</html>
